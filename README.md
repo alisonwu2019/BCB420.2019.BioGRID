@@ -396,12 +396,11 @@ skip = 1, col_names = c("BioGRID Interaction ID", "Entrez_ID1", "Entrez_ID2", "I
  #Network Graph
  t <- data.frame(Num_GeneticInteractions = num_genetic, Percentage=round(num_genetic / total * 100, 2), Num_PhysicalInteractions= num_phy,Percentage=round(num_phy / total * 100, 2),stringsAsFactors = FALSE)
   head(t)
-  Num_GeneticInteractions Percentage Num_PhysicalInteractions
-  1                    5299       1.13                   462759
-  Percentage.1
-  1        98.87
+  
+  ```
+  ![](./inst/img/interaction_percentage.svg?sanitize=true "Interaction Count and Percentage")
 
-
+ ```R
  #the distribution
  deg <-  table(c(BioGridInt$Entrez_ID1, BioGridInt$Entrez_ID2))
  
@@ -411,7 +410,9 @@ skip = 1, col_names = c("BioGRID Interaction ID", "Entrez_ID1", "Entrez_ID2", "I
       main = "Degree distribution",
       xlab = "degree (undirected graph)",
       ylab = "Counts")
-      ```
+ ```
+      
+  ![](./inst/img/degree_dist.svg?sanitize=true "Degree Distribution")
 
 &nbsp;
 
